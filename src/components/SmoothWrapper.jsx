@@ -9,10 +9,11 @@ gsap.registerPlugin(ScrollTrigger, ScrollSmoother, SplitText)
 
 export default function SmoothWrapper({ children }) {
   useEffect(() => {
+    let smoother
     const ctx = gsap.context(() => {
 
       // ── 1. ScrollSmoother ─────────────────────────────────────────────────
-      ScrollSmoother.create({
+      smoother = ScrollSmoother.create({
         wrapper:  '#smooth-wrapper',
         content:  '#smooth-content',
         smooth:   3,
@@ -33,10 +34,16 @@ export default function SmoothWrapper({ children }) {
       })
 
       // ── 3. Hero: remaining elements stagger in ────────────────────────────
-      gsap.to('.hero-eyebrow', { opacity: 1, y: 0, duration: 0.7, delay: 1.6, ease: 'power3.out' })
-      gsap.to('.hero-sub',     { opacity: 1, y: 0, duration: 0.7, delay: 1.8, ease: 'power2.out' })
-      gsap.to('.hero-ctas',    { opacity: 1, y: 0, duration: 0.6, delay: 2.0, ease: 'power2.out' })
-      gsap.to('.scroll-hint',  { opacity: 1, duration: 0.6, delay: 2.2 })
+      // Guard selectors so removed/renamed nodes don't spam console warnings.
+      if (document.querySelector('.hero-eyebrow')) {
+        gsap.to('.hero-eyebrow', { opacity: 1, y: 0, duration: 0.7, delay: 1.6, ease: 'power3.out' })
+      }
+      if (document.querySelector('.hero-ctas')) {
+        gsap.to('.hero-ctas', { opacity: 1, y: 0, duration: 0.6, delay: 2.0, ease: 'power2.out' })
+      }
+      if (document.querySelector('.scroll-hint')) {
+        gsap.to('.scroll-hint', { opacity: 1, duration: 0.6, delay: 2.2 })
+      }
 
       // ── 4. Car: drives in from right on load ──────────────────────────────
       gsap.from('#car', {
@@ -91,19 +98,7 @@ export default function SmoothWrapper({ children }) {
           })
 
           // ── Feature sections: content slides up on enter ──────────────────
-          ;['section2', 'section3', 'section4', 'section5', 'section6'].forEach((id) => {
-            gsap.from(`#${id} .feature-content`, {
-              scrollTrigger: {
-                trigger: `#${id}`,
-                start:   '-20% bottom',
-                end:     'center center',
-                scrub:   true,
-              },
-              y:       '80%',
-              opacity: 0,
-              ease:    'power1.inOut',
-            })
-          })
+          // Feature sections removed from the page.
 
         },
       })
@@ -158,10 +153,12 @@ export default function SmoothWrapper({ children }) {
       // ── 10. Industries: header + cards entrance ──────────────────────────
       gsap.from('#industries .industries-header', {
         scrollTrigger: { trigger: '#industries', start: 'top 80%' },
+        immediateRender: false,
         y: 40, opacity: 0, duration: 0.7, ease: 'power3.out',
       })
       gsap.from('#industries .industry-card', {
         scrollTrigger: { trigger: '#industries', start: 'top 65%' },
+        immediateRender: false,
         y: 40, opacity: 0, duration: 0.6, stagger: 0.06, ease: 'power3.out',
       })
 
@@ -193,7 +190,14 @@ export default function SmoothWrapper({ children }) {
 
     })
 
-    return () => ctx.revert()
+    // Ensure ScrollTrigger measurements are correct (images/fonts + ScrollSmoother proxy)
+    // and avoid dev-mode double-mount leaving a stale smoother instance around.
+    ScrollTrigger.refresh()
+
+    return () => {
+      ctx.revert()
+      smoother?.kill()
+    }
   }, [])
 
   return (

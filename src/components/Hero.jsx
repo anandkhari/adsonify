@@ -34,17 +34,17 @@ export default function Hero() {
         </p>
 
         {/* No opacity-0 — SmoothWrapper sets opacity:1 then SplitText splits chars */}
-        <h1 className="hero-title font-display text-[clamp(3.5rem,9vw,8rem)] leading-[.92] tracking-[2px] mb-6">
-          YOUR AD
-          <br />
-          <span className="text-brand-yellow">RIDES THE</span>
-          <br />
-          STREETS
-        </h1>
+     <h1 className="hero-title font-display text-4xl sm:text-6xl md:text-7xl lg:text-8xl leading-none tracking-[1.5px] mb-6">
+  WHAT IF
+  <br />
+  <span className="text-brand-yellow">YOUR ADS COULD</span>
+  <br />
+  TRAVEL
+</h1>
 
         <div className="hero-ctas flex gap-4 flex-wrap justify-center md:justify-start opacity-0 translate-y-5">
           <a
-            href="#section2"
+            href="#services"
             className="bg-brand-yellow text-brand-black font-condensed text-[0.95rem] font-bold tracking-[2px] uppercase py-[0.9rem] px-[2.2rem] rounded-xs no-underline inline-block transition-all duration-200 hover:bg-white"
           >
             Explore Features
