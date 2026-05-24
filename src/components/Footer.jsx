@@ -44,30 +44,30 @@ export default function Footer() {
             <div className="font-display text-[2rem] font-bold tracking-[2px] text-white mb-1">
               ADSONIFY
             </div>
-            <div className="font-condensed text-[0.6rem] tracking-[4px] uppercase text-brand-yellow mb-5">
+            <div className="font-condensed text-[0.72rem] tracking-[4px] uppercase text-brand-yellow mb-5">
               Kerala&apos;s Boldest Mobile LED Advertising
             </div>
-            <p className="text-[0.82rem] text-brand-gray leading-[1.8] mb-6 max-w-[260px]">
+            <p className="text-[0.92rem] text-brand-gray leading-[1.8] mb-6 max-w-[260px]">
               Transforming daily city transportation into powerful moving advertisement spaces across Kerala.
             </p>
 
             {/* Contact quick-hits */}
             <div className="space-y-2">
               <a
-                href="tel:+91XXXXXXXXXX"
-                className="flex items-center gap-2 text-[0.78rem] text-brand-gray hover:text-brand-yellow transition-colors duration-200"
+                href="tel:+917994502959"
+                className="flex items-center gap-2 text-[0.88rem] text-brand-gray hover:text-brand-yellow transition-colors duration-200"
               >
                 <span className="w-1 h-1 rounded-full bg-brand-yellow flex-shrink-0" />
-                +91 XXXXX XXXXX
+                +91 79945 02959
               </a>
               <a
-                href="mailto:hello@adsonify.com"
-                className="flex items-center gap-2 text-[0.78rem] text-brand-gray hover:text-brand-yellow transition-colors duration-200"
+                href="mailto:thameem@adsonify.com"
+                className="flex items-center gap-2 text-[0.88rem] text-brand-gray hover:text-brand-yellow transition-colors duration-200"
               >
                 <span className="w-1 h-1 rounded-full bg-brand-yellow flex-shrink-0" />
-                hello@adsonify.com
+                thameem@adsonify.com
               </a>
-              <p className="flex items-center gap-2 text-[0.78rem] text-brand-gray">
+              <p className="flex items-center gap-2 text-[0.88rem] text-brand-gray">
                 <span className="w-1 h-1 rounded-full bg-brand-yellow flex-shrink-0" />
                 Kerala, India
               </p>
@@ -76,7 +76,7 @@ export default function Footer() {
 
           {/* Col 2 — Quick Links */}
           <div>
-            <div className="font-condensed text-[0.65rem] tracking-[4px] uppercase text-brand-yellow mb-6 flex items-center gap-3">
+            <div className="font-condensed text-[0.75rem] tracking-[4px] uppercase text-brand-yellow mb-6 flex items-center gap-3">
               <span className="w-4 h-[1.5px] bg-brand-yellow shrink-0" />
               Quick Links
             </div>
@@ -85,7 +85,7 @@ export default function Footer() {
                 <li key={label}>
                   <a
                     href={href}
-                    className="font-condensed text-[0.82rem] tracking-[1px] text-brand-gray hover:text-brand-yellow transition-colors duration-200 flex items-center gap-2 group"
+                    className="font-condensed text-[0.92rem] tracking-[1px] text-brand-gray hover:text-brand-yellow transition-colors duration-200 flex items-center gap-2 group"
                   >
                     <span className="w-0 group-hover:w-3 h-[1px] bg-brand-yellow transition-all duration-200 overflow-hidden" />
                     {label}
@@ -97,7 +97,7 @@ export default function Footer() {
 
           {/* Col 3 — Services */}
           <div>
-            <div className="font-condensed text-[0.65rem] tracking-[4px] uppercase text-brand-yellow mb-6 flex items-center gap-3">
+            <div className="font-condensed text-[0.75rem] tracking-[4px] uppercase text-brand-yellow mb-6 flex items-center gap-3">
               <span className="w-4 h-[1.5px] bg-brand-yellow shrink-0" />
               Our Services
             </div>
@@ -106,7 +106,7 @@ export default function Footer() {
                 <li key={label}>
                   <a
                     href={href}
-                    className="font-condensed text-[0.82rem] tracking-[1px] text-brand-gray hover:text-brand-yellow transition-colors duration-200 flex items-center gap-2 group"
+                    className="font-condensed text-[0.92rem] tracking-[1px] text-brand-gray hover:text-brand-yellow transition-colors duration-200 flex items-center gap-2 group"
                   >
                     <span className="w-0 group-hover:w-3 h-[1px] bg-brand-yellow transition-all duration-200 overflow-hidden" />
                     {label}
@@ -118,7 +118,7 @@ export default function Footer() {
 
           {/* Col 4 — Social + tagline */}
           <div>
-            <div className="font-condensed text-[0.65rem] tracking-[4px] uppercase text-brand-yellow mb-6 flex items-center gap-3">
+            <div className="font-condensed text-[0.75rem] tracking-[4px] uppercase text-brand-yellow mb-6 flex items-center gap-3">
               <span className="w-4 h-[1.5px] bg-brand-yellow shrink-0" />
               Follow Us
             </div>
@@ -169,10 +169,10 @@ export default function Footer() {
                     {icon}
                   </div>
                   <div>
-                    <p className="font-condensed text-[0.75rem] font-bold tracking-[1px] text-white group-hover:text-brand-yellow transition-colors duration-200">
+                    <p className="font-condensed text-[0.85rem] font-bold tracking-[1px] text-white group-hover:text-brand-yellow transition-colors duration-200">
                       {label}
                     </p>
-                    <p className="font-condensed text-[0.65rem] text-brand-gray">
+                    <p className="font-condensed text-[0.75rem] text-brand-gray">
                       {handle}
                     </p>
                   </div>
@@ -196,7 +196,7 @@ export default function Footer() {
       {/* ── Bottom bar ────────────────────────────────────────────────────── */}
       <div className="relative border-t border-[rgba(255,208,0,0.08)] px-8 md:px-16 lg:px-24 py-6">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="font-condensed text-[0.7rem] tracking-[1.5px] text-[rgba(255,255,255,0.25)]">
+          <p className="font-condensed text-[0.8rem] tracking-[1.5px] text-[rgba(255,255,255,0.25)]">
             © 2026 <span className="text-[rgba(255,208,0,0.5)]">Adsonify</span>. All Rights Reserved. · Made with ♥ in Kerala
           </p>
           <div className="flex items-center gap-6">
@@ -204,7 +204,7 @@ export default function Footer() {
               <a
                 key={item}
                 href="#"
-                className="font-condensed text-[0.68rem] tracking-[1.5px] uppercase text-[rgba(255,255,255,0.25)] hover:text-brand-yellow transition-colors duration-200"
+                className="font-condensed text-[0.78rem] tracking-[1.5px] uppercase text-[rgba(255,255,255,0.25)] hover:text-brand-yellow transition-colors duration-200"
               >
                 {item}
               </a>

@@ -116,7 +116,7 @@ export default function Outro() {
         {/* CTA buttons */}
         <div className="flex gap-5 justify-center flex-wrap mb-16">
           <a
-            href="https://wa.me/919876543210"
+            href="https://wa.me/917994502959"
             className="group bg-brand-yellow text-brand-black font-condensed text-[0.9rem] font-bold tracking-[2px] uppercase py-4 px-9 rounded-xs no-underline inline-flex items-center gap-3 transition-all duration-200 hover:bg-white shadow-[0_6px_28px_rgba(255,208,0,0.3)]"
           >
             <span className="shrink-0">
@@ -125,7 +125,7 @@ export default function Outro() {
             WhatsApp Us
           </a>
           <a
-            href="tel:+919876543210"
+            href="tel:+917994502959"
             className="group bg-transparent text-brand-yellow font-condensed text-[0.9rem] font-bold tracking-[2px] uppercase py-4 px-9 border border-[rgba(255,208,0,0.6)] rounded-xs no-underline inline-flex items-center gap-3 transition-all duration-200 hover:border-brand-yellow hover:bg-[rgba(255,208,0,0.08)]"
           >
             <span className="shrink-0">

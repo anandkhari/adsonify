@@ -59,6 +59,36 @@ body {
   animation: roadMove 1.2s linear infinite;
 }
 
+/* Mobile — neutralise ScrollSmoother CSS so native scroll works */
+@media (max-width: 990px) {
+  #smooth-wrapper {
+    overflow: auto !important;
+    position: static !important;
+    height: auto !important;
+  }
+  #smooth-content {
+    position: static !important;
+    width: 100% !important;
+    overflow: visible !important;
+    will-change: unset !important;
+    transform: none !important;
+  }
+}
+
+/* Mobile car — absolute inside #section1 so it scrolls with the hero.
+   Centred via left: calc(50% - 30vw) so GSAP owns transform/x freely. */
+@media (max-width: 990px) {
+  #car {
+    display: block !important;
+    width: 60vw !important;
+    position: absolute !important;
+    bottom: 13vh !important;
+    left: calc(50% - 30vw) !important;
+    top: auto !important;
+    z-index: 30 !important;
+  }
+}
+
 /* LED scanline pseudo-element */
 .led-scanlines::after {
   content: '';

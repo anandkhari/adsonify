@@ -2,8 +2,8 @@ import Image from 'next/image'
 
 const cards = [
   {
-    span: 'lg:col-span-2',
-    aspect: 'aspect-video',
+    span: '',
+    aspect: 'aspect-square',
     src: '/auto-2.jpeg',
     alt: 'Branded auto campaign on city streets',
   },
@@ -19,7 +19,7 @@ const cards = [
     src: '/auto-service.jpeg',
     alt: 'Campaign visibility in high-traffic area',
   },
-  {
+  /* {
     span: 'lg:col-span-2',
     aspect: 'aspect-video',
     src: 'https://images.pexels.com/photos/33461138/pexels-photo-33461138.jpeg',
@@ -43,7 +43,7 @@ const cards = [
     src: 'https://images.pexels.com/photos/31848512/pexels-photo-31848512.jpeg',
     alt: 'Local business campaign launch',
   },
-
+  */
 ]
 
 export default function Gallery() {
@@ -66,7 +66,7 @@ export default function Gallery() {
         className="py-24 px-8 md:px-16 lg:px-24"
         style={{
           backgroundImage:
-            'repeating-linear-gradient(0deg, transparent, transparent 60px, rgba(255,208,0,0.02) 60px, rgba(255,208,0,0.02) 61px), repeating-linear-gradient(90deg, transparent, transparent 60px, rgba(255,208,0,0.02) 60px, rgba(255,208,0,0.02) 61px)',
+            'repeating-linear-gradient(0deg, transparent, transparent 60px, rgba(255,208,0,0.02) 60px, rgba(255,208,0,0.02) 1px), repeating-linear-gradient(90deg, transparent, transparent 60px, rgba(255,208,0,0.02) 60px, rgba(255,208,0,0.02) 1px)',
         }}
       >
         {/* Header */}
@@ -92,14 +92,13 @@ export default function Gallery() {
         </div>
 
         {/* Gallery Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-6xl mx-auto">
           {cards.map((card, i) => (
             <div
               key={i}
               className={`gallery-card relative overflow-hidden rounded-sm ${card.span} ${card.aspect}`}
               style={{ border: '1px solid rgba(255,208,0,0.15)' }}
             >
-              {/* ↓ SWAP src with your real image path */}
               <Image
                 src={card.src}
                 alt={card.alt}

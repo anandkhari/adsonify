@@ -142,7 +142,7 @@ export default function Contact() {
               </div>
               <div>
                 <p className="font-condensed text-[0.65rem] tracking-[3px] uppercase text-[rgba(255,208,0,0.5)] mb-1">Call Us</p>
-                <p className="font-condensed text-[0.95rem] font-bold text-white tracking-[1px]">+91 XXXXX XXXXX</p>
+                <p className="font-condensed text-[0.95rem] font-bold text-white tracking-[1px]">+91 79945 02959</p>
                 <p className="text-[0.8rem] text-brand-gray mt-1">Mon – Sat, 9am – 6pm</p>
               </div>
             </div>
@@ -154,7 +154,7 @@ export default function Contact() {
               </div>
               <div>
                 <p className="font-condensed text-[0.65rem] tracking-[3px] uppercase text-[rgba(255,208,0,0.5)] mb-1">Email Us</p>
-                <p className="font-condensed text-[0.95rem] font-bold text-white tracking-[1px]">hello@adsonify.com</p>
+                <p className="font-condensed text-[0.95rem] font-bold text-white tracking-[1px]">thameem@adsonify.com</p>
                 <p className="text-[0.8rem] text-brand-gray mt-1">We reply within 24 hours</p>
               </div>
             </div>
@@ -167,7 +167,7 @@ export default function Contact() {
               <div>
                 <p className="font-condensed text-[0.65rem] tracking-[3px] uppercase text-[rgba(255,208,0,0.5)] mb-1">WhatsApp</p>
                 <a
-                  href="https://wa.me/91XXXXXXXXXX"
+                  href="https://wa.me/917994502959"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="font-condensed text-[0.95rem] font-bold text-white tracking-[1px] hover:text-brand-yellow transition-colors duration-200"
