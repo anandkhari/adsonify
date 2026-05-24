@@ -83,93 +83,85 @@ export default function About() {
       <div className="h-px bg-linear-to-r from-transparent via-brand-yellow to-transparent opacity-30" />
 
       {/* ── Section B: Mission + Vision — full-width, no car ────────────────── */}
-      <section
-        id="about-mv"
-        className="min-h-screen flex flex-col justify-center px-8 md:px-16 lg:px-24 py-24"
-        style={{
-          background: `
-            repeating-linear-gradient(0deg, transparent, transparent 60px, rgba(255,208,0,0.02) 60px, rgba(255,208,0,0.02) 61px),
-            repeating-linear-gradient(90deg, transparent, transparent 60px, rgba(255,208,0,0.02) 60px, rgba(255,208,0,0.02) 61px)
-          `,
-        }}
-      >
-        {/* Header */}
-        <div className="about-mv-header text-center mb-16">
-          <div className="font-condensed text-[0.7rem] font-bold tracking-[4px] uppercase text-brand-yellow mb-4 flex items-center justify-center gap-3">
-            <span className="block w-6 h-[2px] bg-brand-yellow shrink-0" />
-            Our Purpose
-            <span className="block w-6 h-[2px] bg-brand-yellow shrink-0" />
-          </div>
-          <h2 className="font-display text-[clamp(2.8rem,6vw,5.5rem)] leading-[.95]">
-            MISSION <span className="text-brand-yellow">&amp;</span> VISION
-          </h2>
+     <section
+  id="about-mv"
+  className="min-h-screen flex flex-col justify-center px-8 md:px-16 lg:px-24 py-24"
+>
+  {/* Yellow Header Bar */}
+  <div className="max-w-5xl mx-auto w-full">
+    
+    <div className="bg-brand-yellow px-8 py-6 flex items-end justify-between">
+      <div>
+        <div className="font-condensed text-[0.65rem] font-bold tracking-[4px] uppercase text-black/50 mb-2">
+          Our Purpose
         </div>
+        <h2 className="font-display text-[clamp(2.2rem,5vw,4rem)] leading-[.9] text-black">
+          MISSION <span className="opacity-40">&amp;</span> VISION
+        </h2>
+      </div>
+      {/* Decorative number */}
+      <span className="font-display text-[5rem] leading-none text-black/10 select-none hidden md:block">
+        02
+      </span>
+    </div>
 
-        {/* Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto w-full">
+    {/* 3px brand divider */}
+    <div className="h-[3px] bg-brand-yellow w-full" />
 
-          {/* Mission */}
-          <div className="about-mv-card relative overflow-hidden border border-[rgba(255,208,0,0.15)] rounded-sm p-8 bg-[rgba(255,208,0,0.03)]">
-            <div className="absolute top-4 right-4 font-display text-[6rem] text-[rgba(255,208,0,0.04)] leading-none pointer-events-none select-none">
-              02
-            </div>
+    {/* Two dark panes */}
+    <div className="grid grid-cols-1 md:grid-cols-2">
 
-            <div className="text-brand-yellow mb-6">
-              <MissionIcon />
-            </div>
-
-            <div className="font-condensed text-[0.7rem] font-bold tracking-[4px] uppercase text-brand-yellow mb-3 flex items-center gap-[0.6rem]">
-              <span className="block w-6 h-[2px] bg-brand-yellow shrink-0" />
-              Our Mission
-            </div>
-
-            <h3 className="font-display text-[clamp(1.8rem,3vw,2.8rem)] leading-[.95] mb-5">
-              REVOLUTIONIZE
-              <br />
-              <span className="text-brand-yellow">ADVERTISING</span>
-            </h3>
-
-            <p className="text-[clamp(.85rem,1.3vw,.95rem)] text-brand-gray leading-[1.8]">
-              To revolutionize outdoor advertising through smart mobile campaigns that
-              deliver continuous visibility, stronger customer recall, and affordable
-              local marketing solutions.
-            </p>
-
-            <div className="w-12 h-0.5 bg-brand-yellow mt-7 opacity-60" />
-          </div>
-
-          {/* Vision */}
-          <div className="about-mv-card relative overflow-hidden border border-[rgba(255,208,0,0.15)] rounded-sm p-8 bg-[rgba(255,208,0,0.03)]">
-            <div className="absolute top-4 right-4 font-display text-[6rem] text-[rgba(255,208,0,0.04)] leading-none pointer-events-none select-none">
-              03
-            </div>
-
-            <div className="text-brand-yellow mb-6">
-              <VisionIcon />
-            </div>
-
-            <div className="font-condensed text-[0.7rem] font-bold tracking-[4px] uppercase text-brand-yellow mb-3 flex items-center gap-[0.6rem]">
-              <span className="block w-6 h-[2px] bg-brand-yellow shrink-0" />
-              Our Vision
-            </div>
-
-            <h3 className="font-display text-[clamp(1.8rem,3vw,2.8rem)] leading-[.95] mb-5">
-              INDIA&apos;S
-              <br />
-              <span className="text-brand-yellow">LEADING</span> NETWORK
-            </h3>
-
-            <p className="text-[clamp(.85rem,1.3vw,.95rem)] text-brand-gray leading-[1.8]">
-              To become India&apos;s leading mobile advertising network by connecting
-              businesses, communities, and mobility through innovative moving
-              advertisements.
-            </p>
-
-            <div className="w-12 h-0.5 bg-brand-yellow mt-7 opacity-60" />
-          </div>
-
+      {/* Mission pane */}
+      <div className="bg-[#111111] px-8 py-10 border-r border-[rgba(255,208,0,0.08)]">
+        <div className="text-brand-yellow mb-6">
+          <MissionIcon />
         </div>
-      </section>
+        <div className="font-condensed text-[0.65rem] font-bold tracking-[4px] uppercase text-brand-yellow mb-4 flex items-center gap-2">
+          <span className="block w-4 h-[1.5px] bg-brand-yellow shrink-0" />
+          Our Mission
+        </div>
+        <h3 className="font-display text-[clamp(1.6rem,2.8vw,2.4rem)] leading-[.95] text-white mb-5">
+          REVOLUTIONIZE
+          <br />
+          <span className="text-brand-yellow">ADVERTISING</span>
+        </h3>
+        <p className="text-[clamp(.85rem,1.2vw,.95rem)] text-white/40 leading-[1.85] max-w-sm">
+          To revolutionize outdoor advertising through smart mobile campaigns that
+          deliver continuous visibility, stronger customer recall, and affordable
+          local marketing solutions.
+        </p>
+        <div className="w-8 h-[2px] bg-brand-yellow mt-8 opacity-50" />
+      </div>
+
+      {/* Vision pane */}
+      <div className="bg-[#161616] px-8 py-10">
+        <div className="text-brand-yellow mb-6">
+          <VisionIcon />
+        </div>
+        <div className="font-condensed text-[0.65rem] font-bold tracking-[4px] uppercase text-brand-yellow mb-4 flex items-center gap-2">
+          <span className="block w-4 h-[1.5px] bg-brand-yellow shrink-0" />
+          Our Vision
+        </div>
+        <h3 className="font-display text-[clamp(1.6rem,2.8vw,2.4rem)] leading-[.95] text-white mb-5">
+          INDIA&apos;S
+          <br />
+          <span className="text-brand-yellow">LEADING</span> NETWORK
+        </h3>
+        <p className="text-[clamp(.85rem,1.2vw,.95rem)] text-white/40 leading-[1.85] max-w-sm">
+          To become India&apos;s leading mobile advertising network by connecting
+          businesses, communities, and mobility through innovative moving
+          advertisements.
+        </p>
+        <div className="w-8 h-[2px] bg-brand-yellow mt-8 opacity-50" />
+      </div>
+
+    </div>
+
+    {/* Bottom accent line */}
+    <div className="h-[1px] bg-[rgba(255,208,0,0.12)]" />
+
+  </div>
+</section>
     </>
   )
 }

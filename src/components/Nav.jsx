@@ -19,6 +19,14 @@ export default function Nav() {
           </a>
         </li>
         <li>
+          <Link
+            href="/how-it-works"
+            className="font-condensed text-[0.9rem] font-semibold tracking-[2px] uppercase text-brand-gray no-underline hover:text-brand-yellow transition-colors duration-200"
+          >
+            How It Works
+          </Link>
+        </li>
+        <li>
           <a
             href="#outro"
             className="font-condensed text-[0.9rem] font-semibold tracking-[2px] uppercase text-brand-gray no-underline hover:text-brand-yellow transition-colors duration-200"

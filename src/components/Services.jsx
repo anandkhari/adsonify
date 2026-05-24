@@ -26,6 +26,7 @@ const SERVICES = [
     line1: 'MOBILE AUTO',
     line2: 'AD CAMPAIGNS',
     desc: 'High-visibility advertisements displayed on moving auto-rickshaws across targeted locations and busy public areas throughout the city.',
+    img: '/auto-service.jpeg'
   },
   {
     num: '02',
@@ -33,6 +34,7 @@ const SERVICES = [
     line1: 'BUSINESS &',
     line2: 'ENTERPRISE PROMOS',
     desc: 'Advertising solutions designed for every business size — from local shops to large enterprises, corporate brands, and everything in between.',
+    img: 'https://images.pexels.com/photos/8353803/pexels-photo-8353803.jpeg', // e.g. '/images/services/business-promos.jpg'
   },
   {
     num: '03',
@@ -40,6 +42,7 @@ const SERVICES = [
     line1: 'CAMPAIGN PLANNING',
     line2: '& MANAGEMENT',
     desc: 'Complete campaign coordination from advertisement approval to execution, route planning, and final reporting.',
+    img: 'https://images.pexels.com/photos/3184311/pexels-photo-3184311.jpeg', // e.g. '/images/services/campaign-planning.jpg'
   },
   {
     num: '04',
@@ -47,6 +50,7 @@ const SERVICES = [
     line1: 'CREATIVE DESIGN',
     line2: 'ASSISTANCE',
     desc: 'Professional support for advertisement design, branding layouts, and print-ready visuals that capture public attention.',
+    img: 'https://images.pexels.com/photos/9414018/pexels-photo-9414018.jpeg', // e.g. '/images/services/creative-design.jpg'
   },
   {
     num: '05',
@@ -54,6 +58,7 @@ const SERVICES = [
     line1: 'CAMPAIGN TRACKING',
     line2: '& REPORTS',
     desc: 'Receive campaign monitoring updates, deployment information, visibility reports, and performance data throughout your campaign.',
+    img: 'https://images.pexels.com/photos/7947669/pexels-photo-7947669.jpeg', // e.g. '/images/services/campaign-tracking.jpg'
   },
   {
     num: '06',
@@ -61,6 +66,7 @@ const SERVICES = [
     line1: 'DRIVER & AGENT',
     line2: 'PARTNERSHIP',
     desc: 'Additional earning opportunities for auto drivers and local advertising agents through our structured partnership programs.',
+    img: 'https://images.pexels.com/photos/19038672/pexels-photo-19038672.jpeg', // e.g. '/images/services/driver-partnership.jpg'
   },
 ]
 
@@ -101,40 +107,51 @@ export default function Services() {
               key={s.num}
               className="service-card overflow-hidden rounded-sm border border-[rgba(255,208,0,0.15)] bg-[rgba(255,208,0,0.02)] flex flex-col"
             >
-              {/* ── Image placeholder ──────────────────────────────────── */}
+              {/* ── Image area ─────────────────────────────────────────── */}
               <div className="service-card-img aspect-[16/10] w-full bg-[rgba(255,208,0,0.06)] border-b border-[rgba(255,208,0,0.1)] relative overflow-hidden flex items-center justify-center">
 
-                {/* Diagonal line texture */}
-                <svg
-                  className="absolute inset-0 w-full h-full"
-                  xmlns="http://www.w3.org/2000/svg"
-                  aria-hidden="true"
-                >
-                  <defs>
-                    <pattern
-                      id={`diag-${s.num}`}
-                      patternUnits="userSpaceOnUse"
-                      width="24"
-                      height="24"
+                {s.img ? (
+                  /* Replace src="" with your image path to show the image */
+                  <img
+                    src={s.img}
+                    alt={`${s.line1} ${s.line2}`}
+                    className="absolute inset-0 w-full h-full object-cover"
+                  />
+                ) : (
+                  <>
+                    {/* Diagonal line texture — shown only when no image */}
+                    <svg
+                      className="absolute inset-0 w-full h-full"
+                      xmlns="http://www.w3.org/2000/svg"
+                      aria-hidden="true"
                     >
-                      <line
-                        x1="0" y1="24" x2="24" y2="0"
-                        stroke="#FFD000" strokeWidth="1"
-                      />
-                    </pattern>
-                  </defs>
-                  <rect width="100%" height="100%" fill={`url(#diag-${s.num})`} opacity="0.03" />
-                </svg>
+                      <defs>
+                        <pattern
+                          id={`diag-${s.num}`}
+                          patternUnits="userSpaceOnUse"
+                          width="24"
+                          height="24"
+                        >
+                          <line
+                            x1="0" y1="24" x2="24" y2="0"
+                            stroke="#FFD000" strokeWidth="1"
+                          />
+                        </pattern>
+                      </defs>
+                      <rect width="100%" height="100%" fill={`url(#diag-${s.num})`} opacity="0.03" />
+                    </svg>
 
-                {/* Ghost number */}
-                <span className="font-display text-[5rem] text-[rgba(255,208,0,0.08)] leading-none select-none pointer-events-none">
-                  {s.num}
-                </span>
+                    {/* Ghost number */}
+                    <span className="font-display text-[5rem] text-[rgba(255,208,0,0.08)] leading-none select-none pointer-events-none">
+                      {s.num}
+                    </span>
 
-                {/* Coming soon label */}
-                <span className="font-condensed text-[0.65rem] tracking-[3px] uppercase text-[rgba(255,208,0,0.3)] absolute bottom-3 left-0 right-0 text-center">
-                  Photo coming soon
-                </span>
+                    {/* Coming soon label */}
+                    <span className="font-condensed text-[0.65rem] tracking-[3px] uppercase text-[rgba(255,208,0,0.3)] absolute bottom-3 left-0 right-0 text-center">
+                      Photo coming soon
+                    </span>
+                  </>
+                )}
               </div>
 
               {/* ── Text content ───────────────────────────────────────── */}
