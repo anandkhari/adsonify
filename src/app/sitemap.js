@@ -4,19 +4,20 @@ export default function sitemap() {
   const baseUrl = getSiteUrl()
   const lastModified = new Date()
 
+  const normalizedBaseUrl = baseUrl.replace(/\/+$/, '')
+
   return [
     {
-      url: `${baseUrl}/`,
+      url: `${normalizedBaseUrl}/`,
       lastModified,
       changeFrequency: 'yearly',
       priority: 1,
     },
     {
-      url: `${baseUrl}/how-it-works`,
+      url: `${normalizedBaseUrl}/how-it-works`,
       lastModified,
       changeFrequency: 'monthly',
       priority: 0.8,
     },
   ]
 }
-

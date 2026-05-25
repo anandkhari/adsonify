@@ -156,9 +156,43 @@ export default function Contact() {
     message: "",
   });
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState("");
 
   const handleChange = (e) => {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (submitting) return;
+
+    setError("");
+    setSubmitting(true);
+
+    try {
+      const res = await fetch("https://formspree.io/f/xeedlwly", {
+        method: "POST",
+        headers: { Accept: "application/json" },
+        body: new FormData(e.currentTarget),
+      });
+
+      const data = await res.json().catch(() => null);
+      if (!res.ok || (data && data.ok === false)) {
+        setError(
+          (data && data.error) || "Something went wrong. Please try again."
+        );
+        return;
+      }
+
+      setSubmitted(true);
+      setForm({ name: "", phone: "", email: "", business: "", message: "" });
+      e.currentTarget.reset();
+    } catch {
+      setError("Something went wrong. Please try again.");
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -332,7 +366,9 @@ export default function Contact() {
                 </div>
               ) : (
                 /* Form fields */
-                <div>
+                <form action="https://formspree.io/f/xeedlwly" method="POST" onSubmit={handleSubmit}>
+                  <input type="hidden" name="_subject" value="New Adsonify Lead" />
+                  <input type="hidden" name="_replyto" value={form.email} readOnly />
                   {/* Row 1 — Name + Phone */}
                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-5">
                     <div>
@@ -376,6 +412,7 @@ export default function Contact() {
                         onChange={handleChange}
                         placeholder="your@email.com"
                         className={INPUT_CLASS}
+                        required
                       />
                     </div>
                     <div>
@@ -408,13 +445,18 @@ export default function Contact() {
                     />
                   </div>
 
+                  {error ? (
+                    <p className="text-red-300 text-[0.85rem] mt-2">{error}</p>
+                  ) : null}
+
                   <button
-                    onClick={() => setSubmitted(true)}
-                    className="w-full mt-6 bg-brand-yellow text-brand-black font-condensed text-[0.95rem] font-bold tracking-[2px] uppercase py-4 px-8 rounded-sm hover:bg-white transition-all duration-200"
+                    type="submit"
+                    disabled={submitting}
+                    className="w-full mt-6 bg-brand-yellow text-brand-black font-condensed text-[0.95rem] font-bold tracking-[2px] uppercase py-4 px-8 rounded-sm hover:bg-white transition-all duration-200 disabled:opacity-60 disabled:cursor-not-allowed"
                   >
-                    Send Message →
+                    {submitting ? "Sending..." : "Send Message →"}
                   </button>
-                </div>
+                </form>
               )}
             </div>
           </div>
