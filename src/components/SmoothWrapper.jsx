@@ -52,13 +52,10 @@ export default function SmoothWrapper({ children }) {
       }
 
       // ── 4. Car: drives in from right on load ──────────────────────────────
-      gsap.from('#car', {
-        x:        '30vw',
-        opacity:  0,
-        duration: 1.2,
-        delay:    0.6,
-        ease:     'power2.out',
-      })
+      gsap.fromTo('#car',
+        { x: '30vw', opacity: 0 },
+        { x: 0, opacity: 1, duration: 1.2, delay: 0.6, ease: 'power2.out' }
+      )
 
       // ── 5. Car waypoints + content animations ─────────────────────────────
       gsap.fromTo('#car',
@@ -175,7 +172,7 @@ export default function SmoothWrapper({ children }) {
       gsap.to('.hero-ctas', { opacity: 1, y: 0, duration: 0.6, delay: 0.6, ease: 'power2.out' })
 
       // ── Car: drives in from right, parks permanently ──────────────────────
-      gsap.set('#car', { x: '110vw' })
+      gsap.set('#car', { x: '110vw', opacity: 1 })
       gsap.to('#car', { x: '0vw', duration: 1.4, delay: 0.8, ease: 'power3.out' })
 
       // ── Section animations — start:'top 90%' for tall mobile viewports ───
@@ -217,10 +214,12 @@ export default function SmoothWrapper({ children }) {
 
       gsap.from('#industries .industries-header', {
         scrollTrigger: { trigger: '#industries', start: 'top 90%' },
+        immediateRender: false,
         y: 40, opacity: 0, duration: 0.7, ease: 'power3.out',
       })
       gsap.from('#industries .industry-card', {
         scrollTrigger: { trigger: '#industries', start: 'top 90%' },
+        immediateRender: false,
         y: 40, opacity: 0, duration: 0.6, stagger: 0.05, ease: 'power3.out',
       })
 

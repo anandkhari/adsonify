@@ -6,6 +6,12 @@ import FAQ from '@/components/how-it-works/FAQ'
 import ClientAnimations from '@/components/how-it-works/ClientAnimations'
 import Footer from '@/components/Footer'
 
+export const metadata = {
+  title: 'How It Works',
+  description:
+    'Everything you need to know about launching your Adsonify mobile advertising campaign.',
+}
+
 const Divider = () => (
   <div className="h-px bg-linear-to-r from-transparent via-[rgba(255,208,0,0.3)] to-transparent" />
 )

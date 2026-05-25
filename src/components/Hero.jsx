@@ -21,7 +21,7 @@ export default function Hero() {
       {/* ── Car — inside section1 so it scrolls with hero on mobile ───────── */}
       <div
         id="car"
-        className="absolute top-[30vh] left-[10%] w-[32vw] z-10"
+        className="absolute top-[30vh] left-[10%] w-[32vw] z-10 opacity-0"
         style={{ filter: 'drop-shadow(0 20px 60px rgba(0,0,0,0.7))' }}
       >
         <Image
@@ -56,11 +56,11 @@ export default function Hero() {
         </p>
 
         <h1 className="hero-title font-display text-4xl sm:text-6xl md:text-7xl lg:text-8xl leading-none tracking-[1.5px] mb-6 opacity-0">
-          WHAT IF
+        BECAUSE GREAT 
           <br />
-          <span className="text-brand-yellow">YOUR ADS COULD</span>
+          <span className="text-brand-yellow">BRANDS NEVER STAY </span>
           <br />
-          TRAVEL
+         STILL
         </h1>
 
         <div className="hero-ctas flex gap-4 flex-wrap justify-center md:justify-start opacity-0 translate-y-5">

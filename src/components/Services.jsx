@@ -175,11 +175,7 @@ export default function Services() {
                   {s.desc}
                 </p>
 
-                {/* Learn More */}
-                <div className="font-condensed text-[0.7rem] tracking-[2px] uppercase text-brand-yellow flex items-center gap-2">
-                  Learn More
-                  <ArrowIcon />
-                </div>
+              
 
               </div>
             </div>
